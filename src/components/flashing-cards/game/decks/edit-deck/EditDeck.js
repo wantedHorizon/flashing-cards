@@ -61,7 +61,7 @@ class EditDeck extends Component {
             const card = this.state.cards[this.state.currentCard];
 
             const res = await flashingAPI.put(`/deck/${card.deckId}/card/${card.id}`, data);
-            if (res.status != 200)
+            if (Number(res.status) !== 200)
                 return;
 
             this.state.cards[this.state.currentCard] = res.data;
@@ -83,7 +83,7 @@ class EditDeck extends Component {
 
             const res = await flashingAPI.post(`/deck/${card.deckId}/card/`, data);
             console.log(res);
-            if (res.status != 201)
+            if (Number(res.status) !== 201)
                 return;
 
           
@@ -106,7 +106,7 @@ class EditDeck extends Component {
 
             const res = await flashingAPI.delete(`/deck/${card.deckId}/card/${card.id}`);
             console.log(res);
-            if (res.status != 200)
+            if (Number(res.status) !== 200)
                 return;
 
             const newArr = this.state.cards.filter(c => c.id !== card.id);

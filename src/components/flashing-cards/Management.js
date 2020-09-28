@@ -38,6 +38,7 @@ class Management extends Component {
         e.stopPropagation();
         try{
             const res= await flashingAPI.delete(`/deck/${id}`);
+            console.log(res);
             this.fetchAllDecks();
         }catch(e) {
 
