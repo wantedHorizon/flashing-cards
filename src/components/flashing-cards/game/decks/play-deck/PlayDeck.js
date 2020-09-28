@@ -20,7 +20,7 @@ class PlayDeck extends Component {
         const card = this.state.cards[index];
         if (!card)
             return;
-        this.setState({ question: card.question, answer: card.answer,currentCard: index });
+        this.setState({ question: card.question, answer: card.answer,currentCard: index,isFlipped:false });
     }
     handleClick = (e) => {
         e.preventDefault();
